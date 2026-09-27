@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anu K V &mdash; Enterprise AI Leader | Governance &amp; Product</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F172A;
+            --secondary: #059669;
+            --accent: #047857;
+            --danger: #B54545;
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-tertiary: #64748B;
+            --border: #E2E8F0;
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-heading {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 900px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 12px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-4px);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-of-type(2) { animation-delay: 0.1s; }
+        .section:nth-of-type(3) { animation-delay: 0.2s; }
+        .section:nth-of-type(4) { animation-delay: 0.3s; }
+        .section:nth-of-type(5) { animation-delay: 0.4s; }
+        .section:nth-of-type(6) { animation-delay: 0.5s; }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .case-study {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.05), rgba(92, 200, 250, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .case-study:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+            border-left-color: var(--secondary);
+        }
+
+        .case-study:hover::before {
+            opacity: 1;
+        }
+
+        .case-study-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-study-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-study-subtitle {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .case-section {
+            margin-bottom: 1.8rem;
+        }
+
+        .case-section-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+        }
+
+        .case-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .case-section li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .case-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .metrics-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.08), rgba(92, 200, 250, 0.08));
+            border-left: 3px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-top: 1.2rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .reflections-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(255, 152, 0, 0.08));
+            border-left: 3px solid #FF9800;
+            padding: 1.2rem;
+            border-radius: 10px;
+            margin-top: 1.2rem;
+        }
+
+        .reflections-box strong {
+            color: #FF9800;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .reflections-box p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Governance Artifacts */
+        .artifacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .artifact-card {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.15);
+        }
+
+        .artifact-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .artifact-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .artifact-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-download {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Thought Leadership */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .article-card {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.15);
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .article-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .article-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .article-link:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+
+        .artifact-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: rgba(15, 23, 42, 0.08);
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+
+        /* ==== V3: Metric Strip ==== */
+        .metric-strip-section {
+            margin-bottom: 4rem;
+        }
+        .metric-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+        @media (max-width: 900px) {
+            .metric-strip { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .metric-strip { grid-template-columns: 1fr; }
+        }
+        .strip-metric {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-left: 4px solid var(--primary);
+            border-radius: 14px;
+            padding: 1.5rem 1.6rem;
+            transition: all 0.3s ease;
+        }
+        .strip-metric:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+        }
+        .strip-value {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .strip-label {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ==== V3: Career Arc ==== */
+        .arc-timeline {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            position: relative;
+        }
+        @media (max-width: 900px) {
+            .arc-timeline { grid-template-columns: 1fr; }
+        }
+        .arc-node {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        .arc-node:hover {
+            transform: translateY(-4px);
+        }
+        .arc-year {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .arc-node h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .arc-node p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .arc-anchor {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(15, 23, 42, 0.08);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ==== V3: Recruiter Fit Widget ==== */
+        .fit-widget {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+        .fit-controls {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .fit-controls label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .fit-select {
+            flex: 1;
+            min-width: 260px;
+            padding: 0.85rem 1.1rem;
+            border-radius: 10px;
+            border: 1.5px solid var(--border);
+            background: white;
+            font-size: 0.95rem;
+            font-family: inherit;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .fit-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.12);
+        }
+        .fit-content {
+            padding: 1.6rem 1.8rem;
+            background: rgba(15, 23, 42, 0.04);
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+        .fit-content strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        /* ==== V3: Case study section labels ==== */
+        .case-section-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .case-status-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-left: 0.6rem;
+            vertical-align: middle;
+        }
+        .badge-production {
+            background: rgba(5, 150, 105, 0.14);
+            color: #047857;
+        }
+        .badge-review {
+            background: rgba(217, 119, 6, 0.12);
+            color: #92400E;
+        }
+        .badge-ratified {
+            background: rgba(15, 23, 42, 0.12);
+            color: var(--primary);
+        }
+
+        /* Recognition */
+        .recognition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .recognition-item {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .recognition-item:hover {
+            transform: translateX(8px);
+            border-left-color: var(--secondary);
+        }
+
+        .recognition-year {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .recognition-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .recognition-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .cert-item {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--primary);
+        }
+
+        .cert-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .cert-name {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .cert-issuer {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Contact */
+        .contact-container {
+            backdrop-filter: blur(20px);
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            color: var(--text-tertiary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .case-study {
+                padding: 1.5rem;
+            }
+
+            .contact-container {
+                padding: 2rem;
+            }
+
+            header {
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #1C1C1E;
+                --text-primary: #FFFFFF;
+                --text-secondary: #E5E5EA;
+                --text-tertiary: #A1A1A6;
+                --glass: rgba(45, 45, 50, 0.8);
+            }
+
+            body {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            }
+
+            header {
+                background: rgba(28, 28, 30, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Anu KV</a>
+            <ul class="nav-links">
+                <li><a href="#scale">Scale</a></li>
+                <li><a href="#arc">Arc</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#governance">Governance</a></li>
+                <li><a href="#external">External</a></li>
+                <li><a href="#fit">Fit</a></li>
+                <li><a href="#recognition">Recognition</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-heading">Leading enterprise AI &mdash; shipping agentic systems and the governance layer that lets them scale.</h1>
+                <p class="hero-subtitle">
+                    Leading enterprise AI at Fortune 100 scale &mdash; shipping agentic systems and the governance layer that lets them scale in regulated environments, on 15 years spanning scientific R&amp;D, supply-chain analytics, and AI product leadership. Multi-platform delivery across Microsoft Copilot Studio, Claude Enterprise via Anthropic MCP, and sanctioned enterprise data layers. AIGP-certified.
+                </p>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                <a href="https://www.linkedin.com/in/anukv/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </section>
+
+
+        <!-- Metric Strip -->
+        <section class="section metric-strip-section" id="scale">
+            <h2 class="section-title">Scale, in six numbers</h2>
+            <div class="metric-strip">
+                <div class="strip-metric">
+                    <div class="strip-value">$19.7M</div>
+                    <div class="strip-label">Finance-validated cost optimization through analytics CoE leadership (President&rsquo;s Award, 2021)</div>
+                </div>
+                <div class="strip-metric">
+                    <div class="strip-value">~6,000/mo</div>
+                    <div class="strip-label">Automated stakeholder emails through a production agentic platform, operated by 2 developers reaching 3,000 recipients</div>
+                </div>
+                <div class="strip-metric">
+                    <div class="strip-value">1,798</div>
+                    <div class="strip-label">Sites automated end-to-end through a Power Platform enrollment readiness tool (1.8 FTE eliminated)</div>
+                </div>
+                <div class="strip-metric">
+                    <div class="strip-value">3</div>
+                    <div class="strip-label">Production AI agents shipped across Copilot Studio, Claude Enterprise, and a GraphQL+Cortex+Claude stack</div>
+                </div>
+                <div class="strip-metric">
+                    <div class="strip-value">6</div>
+                    <div class="strip-label">Governance artifacts published and downloadable &mdash; the moat most AI leaders don&rsquo;t build</div>
+                </div>
+                <div class="strip-metric">
+                    <div class="strip-value">2</div>
+                    <div class="strip-label">External platform partners (Anthropic, Microsoft) recognizing enterprise agentic AI work in innovation forums</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Career Arc -->
+        <section class="section" id="arc">
+            <h2 class="section-title">Career Arc</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; max-width: 900px;">
+                Fifteen years turning scientific rigor into shipping AI &mdash; from wet-lab biotech to a supply-chain analytics CoE that returned $19.7M, to leading enterprise agentic AI and its governance layer today.
+            </p>
+            <div class="arc-timeline">
+                <div class="arc-node">
+                    <div class="arc-year">2011&ndash;2020</div>
+                    <h4>Scientific R&amp;D &amp; Digital</h4>
+                    <p>Wet-lab biotech, then product ownership across global R&amp;D digital platforms. The validation discipline learned at the bench became the foundation for later governance work.</p>
+                    <div class="arc-anchor">9+ years R&amp;D</div>
+                </div>
+                <div class="arc-node">
+                    <div class="arc-year">2021&ndash;2023</div>
+                    <h4>Supply-Chain Analytics CoE</h4>
+                    <p>Built a supply-chain analytics Center of Excellence from the ground up &mdash; team, governance, and reusable analytics products. Finance-validated cost optimization, President&rsquo;s Award recognition.</p>
+                    <div class="arc-anchor">$19.7M validated</div>
+                </div>
+                <div class="arc-node">
+                    <div class="arc-year">2023&ndash;Now</div>
+                    <h4>Enterprise AI Leadership</h4>
+                    <p>Leading 3 production AI agents across 3 platform stacks in Fortune 100 pharma, plus the governance layer that lets them scale. AIGP-certified; recognized by Anthropic and Microsoft in enterprise innovation forums.</p>
+                    <div class="arc-anchor">3 platforms, 1 governance layer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signature Work Section -->
+        <section class="section" id="work">
+            <h2 class="section-title">Signature Work</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; max-width: 900px;">
+                Three production AI agents across three different platform stacks &mdash; evidence of platform judgment, not platform commitment &mdash; plus a governance framework that converted a change-management gap into systemic control uplift. Every card follows Problem / Learning / Build / Reflection / Next.
+            </p>
+            <div class="case-studies">
+
+                <!-- CARD 1: RAMP (Copilot Studio) -->
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <span class="article-tag" style="margin-bottom: 0.8rem;">Agentic Systems &middot; Microsoft Copilot Studio</span>
+                        <div class="case-study-title">Resourcing &amp; Delivery Intelligence Agent<span class="case-status-badge badge-production">In use</span></div>
+                        <div class="case-study-subtitle">Portfolio and delivery queries against an enterprise resourcing model &mdash; used by a global team</div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Problem</div>
+                            <p>Portfolio-level resourcing decisions required querying a Power BI semantic model that stakeholders couldn&rsquo;t reach directly. Project-status queries were slow, ad-hoc, and inconsistent across the leadership team &mdash; the wrong latency for weekly capacity calls.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Learning</div>
+                            <p>The platform&rsquo;s native natural-language layer fabricated values on multi-step queries &mdash; unusable for decisions with financial consequences. The hardest work wasn&rsquo;t the agent, it was source-of-truth reconciliation across tables where operational status conflicted with authoritative status.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Build</div>
+                            <p>Microsoft Copilot Studio agent generating deterministic queries against the resourcing semantic model, with an explicit authoritative-source layer that resolves stale-vs-current conflicts. Governance embedded from day one: query logging, source-of-truth mapping, and role-scoped access.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Reflection</div>
+                            <p>Teach the agent which table to trust and it earns audit confidence; skip that step and it&rsquo;s just another hallucination surface. The moat is the reconciliation layer, not the model.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Next</div>
+                            <p>In use by the wider global team. Version 2 in build &mdash; extending along the request lifecycle from <em>querying</em> the resourcing model to feeding <em>request gathering</em> and <em>impact analysis</em> upstream. Moving from reporting agent to workflow agent embedded in the delivery process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: CAM Unified (Claude Enterprise + MCP) -->
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <span class="article-tag" style="margin-bottom: 0.8rem;">Agentic Systems &middot; Claude Enterprise + Anthropic MCP</span>
+                        <div class="case-study-title">Unified Clinical Trial Analytics Agent<span class="case-status-badge badge-review">Governance review</span></div>
+                        <div class="case-study-subtitle">Reference architecture: collapse a multi-dashboard workflow into a single traceable prompt</div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Problem</div>
+                            <p>Answering a single clinical-trial operations question &mdash; site status, protocol deviations, SDV progress, patient screening reconciliation &mdash; required stakeholders to open four to six dashboards and reconcile manually. Multi-day turnaround for questions leadership wanted answered inside a meeting.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Learning</div>
+                            <p>Reconciliation logic across lakehouse tables mattered more than natural-language phrasing. The value wasn&rsquo;t the prompt &mdash; it was collapsing a five-dashboard analyst workflow into one traceable query with full audit lineage.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Build</div>
+                            <p>Claude Enterprise agent via Anthropic MCP running deterministic DAX against the CAM lakehouse semantic model. Governance embedded as design constraint, not review layer: query logging, model cards, and regulatory mappings from day one.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Reflection</div>
+                            <p>Recognized by Anthropic in a customer innovation forum as a reference pattern for multi-source regulated analytics. External validation from a platform partner is a different kind of signal than internal award recognition &mdash; it travels.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Next</div>
+                            <p>External sharing under governance review &mdash; the work is credible enough that formal review for cross-organization sharing is warranted, not deflected.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Digital Teammate (GraphQL + Cortex + Claude) -->
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <span class="article-tag" style="margin-bottom: 0.8rem;">Agentic Systems &middot; GraphQL + Cortex + Claude</span>
+                        <div class="case-study-title">Digital Teammate for Email Automation<span class="case-status-badge badge-production">Production</span></div>
+                        <div class="case-study-subtitle">Self-service enterprise email agent &mdash; from ticket-driven customization to platform</div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Problem</div>
+                            <p>Enterprise email workflows were already automated, but every new use case required roughly a week of developer customization to onboard &mdash; making the platform ticket-driven, not self-service. The ceiling on adoption was the delivery model, not the technology.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Learning</div>
+                            <p>The path to production in a regulated environment isn&rsquo;t the LLM &mdash; it&rsquo;s the sanctioned data-access layer. When the platform&rsquo;s SQL endpoint was deprecated in the environment, GraphQL became the mandatory integration surface. Building on the sanctioned path was faster than negotiating around it.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Build</div>
+                            <p>Three-layer architecture &mdash; GraphQL as sanctioned data access, Cortex as orchestration, Claude as the reasoning layer. Co-built with an architecture lead and an agent-layer engineer to embed governance from day one rather than retrofit at productionization.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Reflection</div>
+                            <p>The value wasn&rsquo;t sending more emails &mdash; they were already automated. The value was eliminating the ~1-week customization cycle every new use case previously required, converting a ticket queue into a self-service capability. Sequence the sanctioned-path work ahead of the agent work and productionization becomes a promotion, not a rebuild.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Next</div>
+                            <p>In production &mdash; operated by 2 developers, reaching ~3,000 recipients through ~6,000 automated emails per month. Evaluating extension to adjacent workflows on the same sanctioned data layer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: FPET CAPA (Governance) -->
+                <div class="case-study">
+                    <div class="case-study-content">
+                        <span class="article-tag" style="margin-bottom: 0.8rem;">Governance &middot; Process Design</span>
+                        <div class="case-study-title">Governance Framework After a Change-Management Gap<span class="case-status-badge badge-ratified">Ratified</span></div>
+                        <div class="case-study-subtitle">Converting an incident into systemic controls &mdash; workstream-level CRs, training, and ALM separation</div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Problem</div>
+                            <p>An automated notification workflow was modified in production without going through the approved change-management process. Second occurrence in a short window. Standard response would have been individual accountability &mdash; but the pattern suggested a process-design gap, not misconduct.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Learning</div>
+                            <p>The right frame for a governance leader is systemic, not personal. Two similar incidents from different developers is a signal that the process itself makes the wrong thing easy and the right thing hard. Fixing the person doesn&rsquo;t fix the pattern.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Build</div>
+                            <p>CAPA framework covering: workstream-level change-request definitions, formal change-management training embedded in developer onboarding, a fast-path CR tier for low-risk edits, environment separation via ALM, and post-implementation CAPA-effectiveness monitoring.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Reflection</div>
+                            <p>This is what AIGP training operationalizes in practice &mdash; turning incident response into systemic control uplift with measurable follow-through. The individuals involved were participants in the fix, not the fix.</p>
+                        </div>
+
+                        <div class="case-section">
+                            <div class="case-section-label">Next</div>
+                            <p>Framework in effect. Workstream-level change controls, developer training, and ALM environment separation adopted. CAPA-effectiveness monitoring underway.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Governance Artifacts Section -->
+        <section class="section" id="governance">
+            <h2 class="section-title">Governance Artifacts</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem; font-style: italic; padding: 0.8rem; background: rgba(15, 23, 42, 0.05); border-left: 3px solid var(--primary); border-radius: 6px;">
+                Generic frameworks for illustration purposes. Not derived from proprietary materials.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7;">
+                Reusable frameworks and templates for regulated AI environments. These are practical, battle-tested, and designed for pharma. Most AI leaders don't have these documented—that's the moat.
+            </p>
+            <div class="artifacts-grid">
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">Framework</div>
+                    <h4>AI Use-Case Review Framework</h4>
+                    <p>Risk-tiered approval process aligned to NIST AI RMF and EU AI Act. Stratifies by risk; maps to review depth, approver roles, and timeline. Starter template for any regulated AI deployment.</p>
+                    <button class="btn-download" onclick="downloadArtifact('use-case-framework')">Download</button>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">Template</div>
+                    <h4>Model Card Template</h4>
+                    <p>Pharma-specific model documentation: use case, training data, validation results, limitations, regulatory justification, audit points. Version-controlled; linked to change processes if issues arise.</p>
+                    <button class="btn-download" onclick="downloadArtifact('model-card')">Download</button>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">RACI</div>
+                    <h4>Governance RACI Matrix</h4>
+                    <p>Clear roles for AI model deployment: Product (scopes), Legal (compliance), Quality (validation), IT (security), Business (approves). Prevents "who signed off?" ambiguity post-incident.</p>
+                    <button class="btn-download" onclick="downloadArtifact('governance-raci')">Download</button>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">Architecture</div>
+                    <h4>Architecture Decision Framework</h4>
+                    <p>When to use Claude + MCP vs. other patterns. Trade-offs: auditability, latency, regulatory fit. Reference architecture for analytics agents in regulated environments.</p>
+                    <button class="btn-download" onclick="downloadArtifact('architecture-framework')">Download</button>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">Standard</div>
+                    <h4>AI Risk Assessment Matrix</h4>
+                    <p>Severity vs. likelihood for common AI risks: hallucinations, data drift, regulatory gaps. Helps prioritize governance investments and validation depth by risk tier.</p>
+                    <button class="btn-download" onclick="downloadArtifact('risk-matrix')">Download</button>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="artifact-tag">Standard</div>
+                    <h4>Audit Logging Standard</h4>
+                    <p>What to log for AI systems in regulated workflows. Schema, retention, access controls, compliance mapping. Basis for regulatory confidence and incident investigation.</p>
+                    <button class="btn-download" onclick="downloadArtifact('audit-logging')">Download</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Thought Leadership Section -->
+        <section class="section" id="thinking">
+            <h2 class="section-title">Thought Leadership</h2>
+            <div class="articles-grid">
+
+                <div class="article-card">
+                    <span class="article-tag">Technical + Governance</span>
+                    <h4>Why Auditability Beats Flexibility in Regulated Analytics</h4>
+                    <p>How architectural choices (deterministic DAX over NLP, direct agent connections over pipeline layers) encode governance into the system. Making compliance a feature, not a gate.</p>
+                    <span class="article-link" style="color: var(--text-tertiary);">Publishing soon</span>
+                </div>
+
+                <div class="article-card">
+                    <span class="article-tag">Architecture</span>
+                    <h4>Building Agentic Analytics in GxP Environments</h4>
+                    <p>Reference architecture for Claude Enterprise + MCP connected to analytics platforms. Security patterns, audit logging, human-in-the-loop design, and governance integration from day 1.</p>
+                    <span class="article-link" style="color: var(--text-tertiary);">Publishing soon</span>
+                </div>
+
+                <div class="article-card">
+                    <span class="article-tag">Career</span>
+                    <h4>From Wet-Lab to AI: What Validation Rigor Teaches Product Teams</h4>
+                    <p>15 years: protein research → data platforms → agentic systems. Why the validation mindset from biotech is an asymmetric advantage in AI governance. And why "it works in production" is not enough in pharma.</p>
+                    <span class="article-link" style="color: var(--text-tertiary);">Publishing soon</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- External Recognition Section -->
+        <section class="section" id="external">
+            <h2 class="section-title">External Recognition</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; max-width: 900px;">
+                Selected engagements where enterprise agentic AI work has been recognized by platform partners &mdash; a small but meaningful signal for AI leaders in regulated industries.
+            </p>
+            <div class="recognition-grid">
+                <div class="recognition-item">
+                    <div class="recognition-year">2025&ndash;2026</div>
+                    <h4>Anthropic &mdash; Innovation Showcase</h4>
+                    <p>Selected by leadership to present the Unified Analytics Dashboard Agent to Anthropic&rsquo;s expert audience &mdash; recognized as an innovative pattern for collapsing multi-dashboard stakeholder workflows into a single-prompt experience with full audit lineage.</p>
+                </div>
+                <div class="recognition-item">
+                    <div class="recognition-year">2025&ndash;2026</div>
+                    <h4>Microsoft &mdash; Enterprise Innovation Touchpoint</h4>
+                    <p>Recurring presenter in Microsoft&rsquo;s monthly innovation forum, positioning enterprise agentic AI work to Microsoft product and engineering audiences and contributing to two-way roadmap discussions on Copilot and Power Platform.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruiter Fit Widget -->
+        <section class="section" id="fit">
+            <h2 class="section-title">Analyze My Fit For Your Role</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; line-height: 1.7; max-width: 900px;">
+                Pick the role band you&rsquo;re hiring for. You&rsquo;ll get a specific fit read against the work above, in plain terms &mdash; not a marketing paragraph.
+            </p>
+            <div class="fit-widget">
+                <div class="fit-controls">
+                    <label for="role-select">Role band:</label>
+                    <select id="role-select" class="fit-select" onchange="updateFit()">
+                        <option value="head-ai-pharma">Head of AI / Analytics &mdash; Pharma &amp; Life Sciences</option>
+                        <option value="head-ai-regulated">Head of AI / Analytics &mdash; Regulated Industries (finance, healthcare, energy)</option>
+                        <option value="ai-product-director">AI Product Director</option>
+                        <option value="ai-governance-lead">AI Governance Lead</option>
+                        <option value="principal-consultant">Principal AI Consultant</option>
+                        <option value="enterprise-architect">Enterprise AI Architect</option>
+                    </select>
+                </div>
+                <div id="fit-content" class="fit-content">
+                    <p><strong>Depth fit.</strong> 15 years across biotech R&amp;D, supply-chain analytics leadership, and enterprise AI &mdash; currently leading 3 production agents across Copilot Studio, Claude Enterprise via MCP, and a GraphQL+Cortex+Claude stack for a Fortune 100 pharma. AIGP-certified. Direct match on: regulated data, GxP workflows, clinical operations context, cross-regional stakeholder delivery, and the governance layer that lets agentic AI scale.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaking & Recognition Section -->
+        <section class="section" id="recognition">
+            <h2 class="section-title">Speaking & Recognition</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: -0.01em;">Speaking</h3>
+                    <div class="recognition-grid" style="grid-template-columns: 1fr;">
+                        <div class="recognition-item">
+                            <div class="recognition-year">2024–2025</div>
+                            <h4>Internal AI Training Series</h4>
+                            <p>Co-designed and delivered training on building AI agents in regulated environments. Knowledge flow reversed—learned as much from participating teams as they did from the content.</p>
+                        </div>
+                        <div class="recognition-item">
+                            <div class="recognition-year">2024</div>
+                            <h4>Analytics Agent Architecture Presentation</h4>
+                            <p>Mixed technical and business leadership forum. Framed governance not as a blocker, but as a feature that enabled faster, more confident deployment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: -0.01em;">Awards &amp; Recognition</h3>
+                    <div class="recognition-grid" style="grid-template-columns: 1fr;">
+                        <div class="recognition-item">
+                            <div class="recognition-year">2025</div>
+                            <h4>Quality Award</h4>
+                            <p>Recognition for governance, compliance, and quality impact on analytics and AI systems.</p>
+                        </div>
+                        <div class="recognition-item">
+                            <div class="recognition-year">2024</div>
+                            <h4>Top 100 Innovator</h4>
+                            <p>Recognized across organization for innovation in AI-driven clinical analytics and agentic systems.</p>
+                        </div>
+                        <div class="recognition-item">
+                            <div class="recognition-year">2023–2024</div>
+                            <h4>Individual Awards (3×)</h4>
+                            <p>Enrollment automation, predictive analytics for clinical operations, and analytics dashboard delivery.</p>
+                        </div>
+                        <div class="recognition-item">
+                            <div class="recognition-year">2021</div>
+                            <h4>President's Award</h4>
+                            <p>Previous employer—supply chain analytics leadership and double-digit millions in validated cost optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: -0.01em;">Certifications</h3>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <div class="cert-name">AIGP</div>
+                    <div class="cert-issuer">Artificial Intelligence Governance Professional<br><small>IAPP, 2026</small></div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">Gen AI</div>
+                    <div class="cert-issuer">Generative AI for Business Transformation<br><small>Purdue University</small></div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">Azure AI-102</div>
+                    <div class="cert-issuer">Engineer Associate<br><small>Microsoft</small></div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">Azure AI-900</div>
+                    <div class="cert-issuer">AI Fundamentals<br><small>Microsoft</small></div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">PMP</div>
+                    <div class="cert-issuer">Project Management Professional<br><small>PMI</small></div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-name">CSPO</div>
+                    <div class="cert-issuer">Certified Scrum Product Owner<br><small>Scrum Alliance</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-container">
+                <p class="contact-intro">
+                    Open to conversations about AI governance, product strategy, regulated analytics, and analytics leadership. Especially interested in: responsible AI frameworks, GxP + AI integration, and building AI systems that earn regulatory confidence.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:kv.nambiar@gmail.com" class="contact-link">Email</a>
+                    <a href="https://www.linkedin.com/in/anukv/" target="_blank" class="contact-link">LinkedIn</a>
+                </div>
+</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p style="font-size: 0.85rem; color: var(--text-tertiary); margin-bottom: 1rem;">
+            Views are my own and do not represent my employer.
+        </p>
+        <p>© 2026 Anu KV | AI Product & Governance Leadership</p>
+        <p>Built with attention to governance, designed for impact.</p>
+    </footer>
+
+    <script> else {
+                prodTrack.classList.remove('active');
+                govTrack.classList.add('active');
+                button.textContent = 'Product Track';
+            }
+        }
+
+        function downloadArtifact(artifactType) {
+            let content = '';
+            let filename = '';
+
+            switch(artifactType) {
+                case 'use-case-framework':
+                    filename = 'AI_Use_Case_Review_Framework.txt';
+                    content = `AI USE-CASE REVIEW FRAMEWORK
+Aligned to NIST AI RMF & EU AI Act
+
+RISK TIERS:
+
+Tier 1: Low Risk
+- Non-critical analytics, dashboards, descriptive reporting
+- Approvers: Product, IT (1 week)
+
+Tier 2: Medium Risk
+- Predictive analytics in advisory role, internal alerts
+- Approvers: Product, IT, Quality (1–2 weeks)
+
+Tier 3: High Risk
+- Models affecting clinical operations, enrollment workflows
+- Approvers: Product, IT, Quality, Legal (2–4 weeks)
+
+Tier 4: Very High Risk
+- GxP-critical systems, patient-facing decisions, regulatory reporting
+- Approvers: All + Regulatory Affairs (4+ weeks)
+
+REVIEW CHECKLIST (for each tier, adjust depth by risk):
+□ Use case and business justification
+□ Data provenance and governance
+□ Model type and architecture
+□ Validation and testing approach
+□ Performance metrics and acceptance criteria
+□ Limitations and known failure modes
+□ Bias assessment (where applicable)
+□ Regulatory alignment and compliance mapping
+□ Audit trail requirements and logging plan
+□ Stakeholder sign-offs
+□ Monitoring and retraining cadence
+□ Incident response playbook
+
+APPROVAL GATES:
+Before Deployment: All checklist items reviewed and signed off
+Post-Deployment: Monitoring live; escalation path defined
+Quarterly: Model performance reviewed; drift detected early
+On Incident: Root cause mapped to framework; gap addressed systematically`;
+                    break;
+
+                case 'model-card':
+                    filename = 'Model_Card_Template_Pharma.txt';
+                    content = `MODEL CARD TEMPLATE (Pharma-Specific)
+
+========================================
+MODEL METADATA
+========================================
+Model Name:
+Version:
+Owner(s):
+Last Updated:
+Regulatory Classification (Tier 1–4):
+
+========================================
+USE CASE
+========================================
+Business Objective:
+What decision does this model support?
+
+Inputs (Data Sources):
+Outputs/Predictions:
+Who uses this model?
+Patient/Site Impact (if any):
+
+========================================
+TECHNICAL DETAILS
+========================================
+Model Type:
+Architecture:
+Training Data: [size, date range, source]
+Validation Approach:
+Key Performance Metrics:
+Thresholds for Production Use:
+
+========================================
+LIMITATIONS & BIASES
+========================================
+Known Limitations:
+When NOT to use this model:
+Bias Assessment Results:
+Mitigation Strategies:
+
+========================================
+REGULATORY & COMPLIANCE
+========================================
+Regulatory Justification:
+Compliance Mappings (NIST AI RMF, EU AI Act):
+Change Management Process:
+Audit Log Location:
+Related Governance Documents:
+
+========================================
+MONITORING & RETRAINING
+========================================
+Monitoring Frequency:
+Data Drift Detection Method:
+Performance Drift Threshold:
+Retraining Cadence:
+Escalation Path (who to notify if issues arise):
+
+========================================
+APPROVAL SIGN-OFF
+========================================
+Product: _____________ Date: _________
+Quality: _____________ Date: _________
+IT Security: ________ Date: _________
+Legal/Compliance: ____ Date: _________
+Business Lead: ______ Date: _________`;
+                    break;
+
+                case 'governance-raci':
+                    filename = 'Governance_RACI_Matrix.txt';
+                    content = `GOVERNANCE RACI: AI MODEL DEPLOYMENT
+
+Activity                      Product | Quality | IT | Legal | Business
+-------------------------------------------------------------------
+Scope use case               A       | C       | I  | C     | R
+Define data requirements     R       | C       | C  | I     | A
+Design validation approach   C       | R       | C  | I     | A
+Assess bias and limitations  C       | R       | I  | C     | I
+Map regulatory compliance    C       | C       | I  | R     | A
+Design audit logging         C       | C       | R  | I     | I
+Approve for deployment       A       | R       | C  | C     | R
+Monitor post-deployment      R       | A       | C  | I     | C
+Incident response            A       | R       | C  | I     | I
+Decommission (if needed)     R       | A       | C  | I     | I
+
+R = Responsible (does the work)
+A = Accountable (final decision)
+C = Consulted (provides input)
+I = Informed (kept in the loop)
+
+Notes:
+- Quality is accountable for validation; Product is accountable for product decisions
+- Legal ensures compliance; IT ensures security and logging
+- Business approves deployment and business impact
+- Never have more than 1 Accountable per activity`;
+                    break;
+
+                case 'architecture-framework':
+                    filename = 'Architecture_Decision_Framework.txt';
+                    content = `ARCHITECTURE DECISION FRAMEWORK
+Claude Enterprise + MCP vs. Alternatives for Regulated Analytics
+
+USE CLAUDE + MCP WHEN:
+✓ Full audit trail is non-negotiable
+✓ Explainability and reasoning transparency matter
+✓ Model answers must be deterministic and reproducible
+✓ Regulatory validation of model outputs is required
+✓ Data must not leave your infrastructure/APIs
+✓ Stakeholders need to understand the "why" behind each result
+✓ Risk tier is High or Very High
+
+DON'T USE CLAUDE + MCP WHEN:
+✗ You need real-time latency (<100ms)
+✗ Your data is too sensitive for any agent connection
+✗ You need continuous learning/fine-tuning
+✗ Your data is unstructured and needs embedding models
+✗ You have low risk tolerance for any external API calls
+
+ALTERNATIVE PATTERNS:
+- Internal LLM (mistral, llama) + local MCP: More control, but less state-of-the-art reasoning
+- NLP pipeline (Feature Engineering → Classification): Faster, less auditable, harder to explain
+- Rules engine (Decision trees, if-then logic): Fully deterministic, zero auditability concerns, but brittle
+
+TRADE-OFFS:
+Claude + MCP wins on: auditability, explainability, regulatory fit
+Internal LLMs win on: data sovereignty, compliance isolation
+Rules/NLP wins on: speed, simplicity, determinism
+
+FOR PHARMA: Auditability beats speed. Choose Claude + MCP for GxP workflows.`;
+                    break;
+
+                case 'risk-matrix':
+                    filename = 'AI_Risk_Assessment_Matrix.txt';
+                    content = `AI RISK ASSESSMENT MATRIX
+Severity vs. Likelihood for Common Pharma Analytics Risks
+
+Risk Type              Likelihood | Severity | Governance Mitigation
+----------------------------------------------------------------------
+Hallucinations         Medium     | High     | Validation dataset, deterministic mode, audit logs
+Data Drift             High       | Medium   | Monitoring, retraining cadence, alerts
+Regulatory Gap         Low        | Very High| NIST mapping, legal review pre-deployment
+Demographic Bias       Medium     | High     | Bias audit, diverse training data, monitoring
+Audit Trail Loss       Low        | Very High| Structured logging, immutable storage, access controls
+Model Inversion        Low        | High     | Differential privacy, API rate limits
+Dependency Failure     Medium     | Medium   | Fallback to manual process, redundancy
+Data Leakage           Low        | Very High| Encryption, access controls, audit logging
+Concept Drift          High       | Medium   | Regular validation, user feedback loops
+
+GOVERNANCE BY RISK TIER:
+Very High Risk: Quarterly audit, daily monitoring, pre-incident playbook
+High Risk: Monthly audit, daily monitoring, weekly check-ins
+Medium Risk: Quarterly audit, weekly monitoring, issue-driven reviews
+Low Risk: Annual audit, monthly monitoring, as-needed updates`;
+                    break;
+
+                case 'audit-logging':
+                    filename = 'Audit_Logging_Standard.txt';
+                    content = `AUDIT LOGGING STANDARD FOR AI SYSTEMS
+Pharma Compliance & Regulatory Confidence
+
+WHAT TO LOG:
+1. QUERY METADATA
+   - Timestamp (UTC)
+   - User ID / Service Principal
+   - Model/Agent ID
+   - Input parameters (sanitized if sensitive)
+   - Output (full or truncated)
+   - Execution time
+
+2. DECISION POINTS
+   - What decision did the model make?
+   - Confidence/threshold values
+   - Alternative options considered
+   - Why this option was chosen
+
+3. DATA LINEAGE
+   - Which data sources were queried?
+   - Data versions/snapshots used
+   - Transformation logic applied
+   - Aggregation level
+
+4. HUMAN ACTIONS
+   - Manual overrides or approvals
+   - Escalations
+   - Corrections
+   - Feedback loops
+
+5. ERRORS & EXCEPTIONS
+   - Error type and message
+   - Stack trace (sanitized)
+   - Recovery action taken
+   - Notification (who was alerted)
+
+LOG RETENTION:
+- 7 years minimum (pharma standard)
+- Immutable storage (append-only, no deletion)
+- Access-controlled (audit log of log access)
+
+COMPLIANCE MAPPINGS:
+- FDA 21 CFR Part 11: Electronic records, audit trails, digital signatures
+- GDPR: Data access logs, retention limits for personal data
+- GxP: Change documentation, validation, compliance evidence`;
+                    break;
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+
+        // ==== V3: Recruiter Fit Widget ====
+        const fitContent = {
+            'head-ai-pharma': `<p><strong>Depth fit.</strong> 15 years across biotech R&D, supply-chain analytics leadership, and enterprise AI &mdash; currently leading 3 production agents across Copilot Studio, Claude Enterprise via MCP, and a GraphQL+Cortex+Claude stack for a Fortune 100 pharma. AIGP-certified. Direct match on: regulated data, GxP workflows, clinical operations context, cross-regional stakeholder delivery, and the governance layer that lets agentic AI scale.</p>`,
+
+            'head-ai-regulated': `<p><strong>Transferable fit.</strong> Regulated-industry AI is regulated-industry AI: audit trails, change management, sanctioned data access, and stakeholder education matter more than the model choice. Fifteen years spanning R&D governance, a supply-chain analytics CoE that returned $19.7M finance-validated, and enterprise agentic AI transfer directly. AIGP framework maps across NIST AI RMF, EU AI Act, and sector-specific regimes; scientific-domain depth is the differentiator in life sciences and healthcare specifically.</p>`,
+
+            'ai-product-director': `<p><strong>Product-mode leader.</strong> 3 production AI agents shipped across 3 different platform stacks &mdash; evidence of platform judgment, not platform commitment. Own outcomes, not features: ~6,000 automated emails/month operated by 2 developers, 1,798 sites automated end-to-end (1.8 FTE eliminated), self-service platform moved from ticket-driven customization. CSPO plus 9 years of product ownership in R&D digital platforms.</p>`,
+
+            'ai-governance-lead': `<p><strong>Governance-as-a-practice.</strong> AIGP + Azure AI-102 + Purdue GenAI, applied through 6 downloadable governance artifacts (RACI, model cards, risk matrix, audit-logging standard, use-case review framework, architecture decision framework), a CAPA that converted a change-management incident into systemic controls, and the audit-ready design pattern for 3 production agents in a regulated Fortune 100. Fluent across NIST AI RMF, EU AI Act, and enterprise ALM. Governance framed as an enabler of scale, not a gate on it.</p>`,
+
+            'principal-consultant': `<p><strong>Advisory-adjacent profile.</strong> Externally recognized by Anthropic (customer innovation forum) and Microsoft (monthly enterprise innovation touchpoint) for enterprise agentic AI work &mdash; a small but rare signal at this level. 15 years of client-adjacent delivery, from internal-consulting analytics at a Fortune 500 ($19.7M validated) to reference-architecture positioning at Fortune 100 pharma. Suited to hybrid advisory + delivery engagements where credibility comes from having shipped, not from having presented.</p>`,
+
+            'enterprise-architect': `<p><strong>Reference-architecture builder.</strong> Bypassed a hallucinating platform NLP layer for deterministic DAX-over-MCP; sequenced GraphQL as sanctioned data access ahead of agent development to avoid rebuild at productionization; designed the governance layer for external AI agent access via APIM. Multi-platform stack judgment across Copilot Studio, Claude Enterprise, and a GraphQL+Cortex+Claude architecture &mdash; each chosen for the specific problem, all under one governance layer.</p>`
+        };
+
+        function updateFit() {
+            const val = document.getElementById('role-select').value;
+            document.getElementById('fit-content').innerHTML = fitContent[val];
+        }
+
+        // Set default fit content on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateFit();
+        });
+
+        // Smooth navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = 'var(--primary)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
